@@ -1,0 +1,12 @@
+.env
+.DS_Store
+Thumbs.db
+bootstrap/compiled.php
+bootstrap/environment.php
+vendor/autoload.php
+vendor/services.json
+vendor/composer/*
+!vendor/composer/installed.json
+node_modules
+tests/_output/*
+vendor/**/.git
