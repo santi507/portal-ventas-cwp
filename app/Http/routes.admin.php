@@ -107,4 +107,44 @@ Route::group(['middleware' => ['auth.ldap', 'acl', 'session_timeout']], function
 			]);
 		});
 	});
+
+	Route::group(['prefix' => 'vendedores'], function() {
+	    
+	    Route::group(['prefix' => 'tienda'], function() {
+	        
+	        Route::get('/', [
+	        	'as' => 'sellers.shop',
+	        	'uses' => 'SellersController@getShopSellers'
+	        ]);
+
+	        Route::get('crear', [
+	        	'as' => 'sellers.shop.create',
+	        	'uses' => 'SellersController@addShopSellers'
+	        ]);
+
+	        Route::post('store', [
+	        	'as' => 'sellers.shop.store',
+	        	'uses' => 'SellersController@storeShopSellers'
+	        ]);
+
+	        Route::get('{id}/editar', [
+	        	'as' => 'sellers.shop.edit',
+	        	'uses' => 'SellersController@editShopSellers'
+	        ]);
+
+	        Route::post('{id}/update', [
+	        	'as' => 'sellers.shop.update',
+	        	'uses' => 'SellersController@updateShopSellers'
+	        ]);
+
+	        Route::delete('{id}/delete', [
+	        	'as' => 'sellers.shop.delete',
+	        	'uses' => 'SellersController@deleteShopSellers'
+	        ]);
+
+	    });
+
+	});
+
+
 });

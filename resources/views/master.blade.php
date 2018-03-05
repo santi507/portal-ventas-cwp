@@ -10,7 +10,8 @@
         <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('assets/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('assets/vendor/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('assets/vendor/DataTables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/vendor/DataTables/DataTables/css/dataTables.bootstrap.min.css') }}" 
+        rel="stylesheet" type="text/css" />
         <link href="{{ asset('assets/css/master.css') }}" rel="stylesheet" type="text/css" />
         @yield('styles')
 
@@ -44,6 +45,9 @@
         <script type="text/javascript" src="{{ asset('assets/vendor/select2/js/select2.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/js/lib/biginteger.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/vendor/DataTables/datatables.min.js') }}"></script>
+        <script type="text/javascript" 
+                src="{{ asset('assets/vendor/DataTables/DataTables/js/dataTables.bootstrap.min.js') }}">
+        </script>
         <script type="text/javascript" src="{{ asset('assets/js/util/general.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/js/hotfix.js') }}"></script>
         @yield('scripts')

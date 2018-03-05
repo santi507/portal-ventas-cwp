@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #00a7cf">
   
   <div class="container-fluid">
     
@@ -11,17 +11,19 @@
         <span class="icon-bar"></span>
       </button>
       
-      <a class="navbar-brand" href="{{ route('admin.index') }}">
-        <img src="{{ asset('assets/images/globo-cwp.png') }}" style="height: 100%;display: inline-block;"> {{ config('app.name') }}</a>
+      <a class="navbar-brand" href="{{ route('admin.index') }}" style="color: #fff;">
+        <img src="{{ asset('assets/images/globo-cwp.png') }}" style="height: 100%;display: inline-block;"> 
+        {{ config('app.name') }}
+      </a>
     </div>
     
     <div id="navbar" class="navbar-collapse collapse">
       
       <ul class="nav navbar-nav navbar-right">
         @if(isset(session('admin-auth')['name']) && session('admin-auth')['name'])
-          <li><a href="#">{{ mb_strtoupper(session()->get('admin-auth')['name'], 'UTF-8') }}</a></li>
+          <li><a href="#" style="color:#fff;">{{ mb_strtoupper(session()->get('admin-auth')['name'], 'UTF-8') }}</a></li>
         @else
-          <li><a href="#">{{ mb_strtoupper(session()->get('admin-auth')['username'], 'UTF-8') }}</a></li>
+          <li><a href="#" style="color:#fff;">{{ mb_strtoupper(session()->get('admin-auth')['username'], 'UTF-8') }}</a></li>
         @endif
         @if(isset(session('admin-auth')['photo']) && session('admin-auth')['photo'])
           <li>
