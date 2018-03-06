@@ -41,7 +41,7 @@
   </li>
   <div class="collapse list-group-submenu list-group-submenu-1" id="admin">
     <li>
-      <a href="{{ route('admin.sellers.shop') }}" class="list-group-item" data-parent="#admin">
+      <a href="{{ route('admin.products') }}" class="list-group-item" data-parent="#admin">
         <i class="fa fa-angle-right"></i> Productos
       </a>
     </li>

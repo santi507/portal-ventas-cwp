@@ -108,8 +108,10 @@ Route::group(['middleware' => ['auth.ldap', 'acl', 'session_timeout']], function
 		});
 	});
 
+	/*VENDEDORES*/
 	Route::group(['prefix' => 'vendedores'], function() {
 	    
+	    /*VENDEDORES DE TIENDA*/
 	    Route::group(['prefix' => 'tienda'], function() {
 	        
 	        Route::get('/', [
@@ -146,5 +148,37 @@ Route::group(['middleware' => ['auth.ldap', 'acl', 'session_timeout']], function
 
 	});
 
+	/*PRODUCTOS*/
+	Route::group(['prefix' => 'productos'], function() {
+	    
+	    Route::get('/', [
+	    	'as' => 'products',
+	    	'uses' => 'ProductController@getProducts'
+	    ]);
 
+	    Route::get('/crear', [
+	    	'as' => 'products.add',
+	    	'uses' => 'ProductController@createProducts'
+	    ]);
+
+	    Route::post('/store', [
+	    	'as' => 'products.store',
+	    	'uses' => 'ProductController@storeProducts'
+	    ]);
+
+	    Route::get('{id}/editar', [
+	    	'as' => 'products.edit',
+	    	'uses' => 'ProductController@editProducts'
+	    ]);
+
+	    Route::post('{id}/update', [
+	    	'as' => 'products.update',
+	    	'uses' => 'ProductController@updateProducts'
+	    ]);
+	});
+
+	Route::get('subcategory/{id}', [
+	    'as' => 'subcategories',
+	    'uses' => 'ProductController@getSubcategories'
+	]);
 });
