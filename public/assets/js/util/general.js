@@ -38,6 +38,21 @@ $(document).on('ready', function() {
 		}
 	});
 
+	$('#shops').DataTable({
+		"pageLength": 8,
+		"language": {
+			"emptyTable": "No hay datos disponibles",
+			"info": "",
+			"infoEmpty": "",
+			"lengthMenu": "",
+			"search": "Buscar:",
+			"paginate": {
+		        "next":       "<i class='fa fa-caret-right'></i>",
+		        "previous":   "<i class='fa fa-caret-left'></i>"
+		    }
+		}
+	});
+
 	//get subcategories
 	$('.product_category').on('change', function(e){
 		$('.product_subcategory').append("<option value=''>Cargando ...</option>");

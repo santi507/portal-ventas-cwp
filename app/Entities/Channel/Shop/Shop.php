@@ -17,4 +17,8 @@ class Shop extends Model
     public function sellers(){
     	return $this->hasMany('App\Entities\Seller\Shop','shop_id');
     }
+
+    public function admin(){
+		return $this->hasOne('App\Entities\Channel\Shop\ShopAdmin','shop_id');
+    }
 }

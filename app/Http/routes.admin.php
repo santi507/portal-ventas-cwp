@@ -148,7 +148,7 @@ Route::group(['middleware' => ['auth.ldap', 'acl', 'session_timeout']], function
 
 	});
 
-	/*PRODUCTOS*/
+	/*ADMIN PRODUCTOS*/
 	Route::group(['prefix' => 'productos'], function() {
 	    
 	    Route::get('/', [
@@ -181,4 +181,24 @@ Route::group(['middleware' => ['auth.ldap', 'acl', 'session_timeout']], function
 	    'as' => 'subcategories',
 	    'uses' => 'ProductController@getSubcategories'
 	]);
+
+	/*ADMIN TIENDAS*/
+	Route::group(['prefix' => 'tiendas'], function() {
+	    
+	    Route::get('/', [
+	    	'as' => 'shops',
+	    	'uses' => 'ShopController@getShops'
+		]);
+
+		Route::get('/crear', [
+	    	'as' => 'shops.create',
+	    	'uses' => 'ShopController@createShops'
+	    ]);
+
+		Route::get('{id}/edit', [
+	    	'as' => 'shops.edit',
+	    	'uses' => 'ShopController@editShops'
+		]);
+	
+	});
 });

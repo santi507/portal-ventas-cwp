@@ -46,7 +46,7 @@
       </a>
     </li>
     <li>
-      <a href="{{ route('admin.sellers.shop') }}" class="list-group-item" data-parent="#admin">
+      <a href="{{ route('admin.shops') }}" class="list-group-item" data-parent="#admin">
         <i class="fa fa-angle-right"></i> Tiendas
       </a>
     </li>
