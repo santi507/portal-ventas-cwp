@@ -199,3 +199,9 @@ form.action-btn {
 .auth-details .position {
 	font-size: 0.8em;
 }
+
+.g-s-t{
+	text-align: left;
+	font-weight: 600;
+	margin-bottom: 2em;
+}

@@ -13,4 +13,8 @@ class Shop extends Model
     public function shop(){
     	return $this->belongsTo('App\Entities\Channel\Shop\Shop', 'shop_id');
     }
+
+    public function goals(){
+    	return hasMany('App\Entities\Goal\Shop\Seller','seller_id');
+    }
 }

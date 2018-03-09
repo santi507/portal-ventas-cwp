@@ -50,7 +50,22 @@
         <i class="fa fa-angle-right"></i> Tiendas
       </a>
     </li>
+  </div>
+
+  <li>
+    <a href="#metas" class="list-group-item" data-toggle="collapse" data-parent="#metas" style="background-color: #f5f5f5;color: #00a7cf">
+      <i class="fa fa-tachometer"></i> Metas
+    </a>
+  </li>
+  <div class="collapse list-group-submenu list-group-submenu-1" id="metas">
+    <li>
+      <a href="{{ route('admin.goal.shops') }}" class="list-group-item" data-parent="#metas">
+        <i class="fa fa-angle-right"></i> Tienda
+      </a>
+    </li>
   </div> 
+
+
 
   {!! HTML::auth_nav_li('admin.access', 'Roles y permisos', 'key', 'manage_access') !!}
   {!! HTML::auth_nav_li('admin.audit', 'Auditoría', 'briefcase', 'audit') !!}

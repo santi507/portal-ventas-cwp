@@ -201,4 +201,24 @@ Route::group(['middleware' => ['auth.ldap', 'acl', 'session_timeout']], function
 		]);
 	
 	});
+
+	/*METAS*/
+	Route::group(['prefix' => 'metas'], function() {
+	    
+	    Route::group(['prefix' => 'tienda'], function() {
+
+	    	Route::get('/', [
+		    	'as' => 'goal.shops',
+		    	'uses' => 'GoalController@shop'
+			]);
+	        
+	        Route::group(['prefix' => 'formato'], function() {
+	            Route::get('vendedores', [
+	            	'as' => 'goal.shops.format.sellers',
+	            	'uses' => 'GoalController@getFormatShopSeller'
+	            ]);
+	        });
+
+	    });
+	});
 });
