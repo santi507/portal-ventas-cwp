@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Entities\Goal\Shop\Seller as ShopSeller;
+use App\Jobs\InsertGoalShopSeller;
 
 use Excel;
 use Carbon\Carbon;
@@ -25,5 +26,17 @@ class GoalController extends Controller
                 $sheet->fromArray($data);
             });
         })->export('xls');
+    }
+
+    public function loadShopSeller(Request $request){
+
+        
+        $goals = request()->file('goal-shop-seller');
+        $path = $goals->getRealPath();
+
+        $load = new InsertGoalShopSeller($path);
+        dispatch($load);
+
+        
     }
 }

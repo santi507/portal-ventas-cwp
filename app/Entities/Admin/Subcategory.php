@@ -17,6 +17,10 @@ class Subcategory extends Model
     	return $this->hasMany('App\Entities\Admin\Product','subcategory_id');
     }
 
+    public function goals(){
+        return $this->hasMany('App\Entities\Goal\Shop\Seller','subcategory_id');
+    }
+
     public static function subcategories($id)
     {
     	return Subcategory::where('category_id',$id)->where('status',1)->get();

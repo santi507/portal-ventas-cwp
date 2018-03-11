@@ -205,3 +205,29 @@ form.action-btn {
 	font-weight: 600;
 	margin-bottom: 2em;
 }
+
+.card-report{
+	border-radius: 5px;
+	padding: 40px;
+}
+
+.fijo{
+	background-color: #4682b4;
+}
+
+.movil{
+	background-color: #d41527;
+}
+
+.desco{
+	background-color: #f7882f;
+}
+
+.card-report span, .card-report span i{
+	color: #fff;
+	font-size: 18px;
+}
+
+.fixed-info th, .fixed-info td{
+	text-align: center;
+}

@@ -2,6 +2,20 @@
 
   {!! HTML::auth_nav_li('admin.index', 'Inicio', 'home', null) !!}
   <li>
+    <a href="#ventas" class="list-group-item" data-toggle="collapse" data-parent="#ventas" style="background-color: #f5f5f5;color: #00a7cf">
+      <i class="fa fa-line-chart"></i> Reportes
+    </a>
+  </li>
+  <div class="collapse list-group-submenu list-group-submenu-1" id="ventas">
+    <li>
+      <a href="{{ route('admin.reports.shop') }}" class="list-group-item" data-parent="#ventas">
+        <i class="fa fa-angle-right"></i> Tiendas
+      </a>
+    </li>
+  </div>
+
+
+  <li>
     <a href="#vendedores" class="list-group-item" data-toggle="collapse" data-parent="#vendedores" style="background-color: #f5f5f5;color: #00a7cf">
       <i class="fa fa-users"></i> Vendedores
     </a>

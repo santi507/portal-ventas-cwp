@@ -15,6 +15,6 @@ class Shop extends Model
     }
 
     public function goals(){
-    	return hasMany('App\Entities\Goal\Shop\Seller','seller_id');
+    	return $this->hasMany('App\Entities\Goal\Shop\Seller','shop_seller_id');
     }
 }

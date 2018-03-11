@@ -202,7 +202,7 @@ Route::group(['middleware' => ['auth.ldap', 'acl', 'session_timeout']], function
 	
 	});
 
-	/*METAS*/
+	/* METAS */
 	Route::group(['prefix' => 'metas'], function() {
 	    
 	    Route::group(['prefix' => 'tienda'], function() {
@@ -211,14 +211,53 @@ Route::group(['middleware' => ['auth.ldap', 'acl', 'session_timeout']], function
 		    	'as' => 'goal.shops',
 		    	'uses' => 'GoalController@shop'
 			]);
-	        
-	        Route::group(['prefix' => 'formato'], function() {
-	            Route::get('vendedores', [
-	            	'as' => 'goal.shops.format.sellers',
+	        /* FORMATO */
+	        Route::group(['prefix' => 'vendedores'], function() {
+	            
+	            Route::get('formato', [
+	            	'as' => 'goal.shops.sellers.format',
 	            	'uses' => 'GoalController@getFormatShopSeller'
+	            ]);
+
+	            Route::post('cargar', [
+	                'as' => 'goal.shops.sellers.load',
+	            	'uses' => 'GoalController@loadShopSeller'
 	            ]);
 	        });
 
 	    });
+	});
+
+	/*REPORTES*/
+	Route::group(['prefix' => 'reportes'], function() {
+	    
+	   	Route::group(['prefix' => 'tienda'], function() {
+	   	    
+	   	    Route::get('/', [
+	   	    	'as' => 'reports.shop',
+	   	    	'uses' => 'ReportController@indexShop'
+	   	    ]);
+
+	   	    Route::group(['prefix' => 'fijo'], function() {
+	   	        Route::get('vendedor/{nt}', [
+	   	        	'as' => 'reports.shop.fixed.seller',
+	   	        	'uses' => 'ReportController@fixedShopSeller'
+	   	        ]);
+	   	        Route::post('vendedor/{nt}', [
+	   	        	'as' => 'reports.shop.movil.seller',
+	   	        	'uses' => 'ReportController@fixedShopSeller'
+	   	        ]);
+	   	    });
+
+	   	    Route::group(['prefix' => 'movil'], function() {
+	   	        Route::get('vendedor/{nt}', [
+	   	        	'as' => 'reports.shop.movil.seller',
+	   	        	'uses' => 'ReportController@movilShopSeller'
+	   	        ]);
+
+	   	    });
+
+	   	});
+	
 	});
 });

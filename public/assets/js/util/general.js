@@ -63,5 +63,12 @@ $(document).on('ready', function() {
 			}
 		});
 	});
+
+	//MESES GESTION
+	moment.locale('es');
+
+	for (var i = 0; i < 6; i++) {
+		$('.meses').append("<option value='"+ moment().subtract(i,'months').format('YYYY-MM') +"'>" + moment().subtract(i,'months').format('MMMM, YYYY') + "</option>");
+	}
 });
 
