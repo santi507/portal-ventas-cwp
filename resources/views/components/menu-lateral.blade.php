@@ -27,23 +27,28 @@
       </a>
     </li>
     <li>
-      <a href="#" class="list-group-item" data-parent="#vendedores">
+      <a href="{{ route('admin.sellers.callcenter') }}" class="list-group-item" data-parent="#vendedores">
         <i class="fa fa-angle-right"></i> Call Center
       </a>
     </li>
     <li>
-      <a href="#" class="list-group-item" data-parent="#vendedores">
-        <i class="fa fa-angle-right"></i> Venta Directa
+      <a href="{{ route('admin.sellers.d2d') }}" class="list-group-item" data-parent="#vendedores">
+        <i class="fa fa-angle-right"></i> D2D Capital y P. Oeste
       </a>
     </li>
     <li>
-      <a href="#" class="list-group-item" data-parent="#vendedores">
+      <a href="{{ route('admin.sellers.d2dch') }}" class="list-group-item" data-parent="#vendedores">
+        <i class="fa fa-angle-right"></i> D2D Chiriquí
+      </a>
+    </li>
+    <li>
+      <a href="{{ route('admin.sellers.soho') }}" class="list-group-item" data-parent="#vendedores">
+        <i class="fa fa-angle-right"></i> Soho
+      </a>
+    </li>
+    <li>
+      <a href="{{ route('admin.sellers.promoter') }}" class="list-group-item" data-parent="#vendedores">
         <i class="fa fa-angle-right"></i> Promotores
-      </a>
-    </li>
-    <li>
-      <a href="#" class="list-group-item" data-parent="#vendedores">
-        <i class="fa fa-angle-right"></i> Alianza
       </a>
     </li>
   </div> 

@@ -146,6 +146,161 @@ Route::group(['middleware' => ['auth.ldap', 'acl', 'session_timeout']], function
 
 	    });
 
+	    /*VENDEDORES DE CALL CENTER*/
+	    Route::group(['prefix' => 'callcenter'], function() {
+	        
+	        Route::get('/', [
+	        	'as' => 'sellers.callcenter',
+	        	'uses' => 'SellersController@getCallCenterSellers'
+	        ]);
+
+	        Route::get('crear', [
+	        	'as' => 'sellers.callcenter.create',
+	        	'uses' => 'SellersController@addCallCenterSellers'
+	        ]);
+
+	        Route::post('store', [
+	        	'as' => 'sellers.callcenter.store',
+	        	'uses' => 'SellersController@storeCallCenterSellers'
+	        ]);
+
+	        Route::get('{id}/editar', [
+	        	'as' => 'sellers.callcenter.edit',
+	        	'uses' => 'SellersController@editCallCenterSellers'
+	        ]);
+
+	        Route::post('{id}/update', [
+	        	'as' => 'sellers.callcenter.update',
+	        	'uses' => 'SellersController@updateCallCenterSellers'
+	        ]);
+
+	        Route::delete('{id}/delete', [
+	        	'as' => 'sellers.callcenter.delete',
+	        	'uses' => 'SellersController@deleteCallCenterSellers'
+	        ]);
+
+	    });
+
+	    /*VENDEDORES DE D2D*/
+	    Route::group(['prefix' => 'd2d'], function() {
+	        
+	        Route::get('/', [
+	        	'as' => 'sellers.d2d',
+	        	'uses' => 'SellersController@getD2DSellers'
+	        ]);
+
+	        Route::get('crear', [
+	        	'as' => 'sellers.d2d.create',
+	        	'uses' => 'SellersController@addD2DSellers'
+	        ]);
+
+	        Route::post('store', [
+	        	'as' => 'sellers.d2d.store',
+	        	'uses' => 'SellersController@storeD2DSellers'
+	        ]);
+
+	        Route::get('{id}/editar', [
+	        	'as' => 'sellers.d2d.edit',
+	        	'uses' => 'SellersController@editD2DSellers'
+	        ]);
+
+	        Route::post('{id}/update', [
+	        	'as' => 'sellers.d2d.update',
+	        	'uses' => 'SellersController@updateD2DSellers'
+	        ]);
+
+	    });
+
+	    /*VENDEDORES DE D2D-CH*/
+	    Route::group(['prefix' => 'd2d-ch'], function() {
+	        
+	        Route::get('/', [
+	        	'as' => 'sellers.d2dch',
+	        	'uses' => 'SellersController@getD2DCHSellers'
+	        ]);
+
+	        Route::get('crear', [
+	        	'as' => 'sellers.d2dch.create',
+	        	'uses' => 'SellersController@addD2DCHSellers'
+	        ]);
+
+	        Route::post('store', [
+	        	'as' => 'sellers.d2dch.store',
+	        	'uses' => 'SellersController@storeD2DCHSellers'
+	        ]);
+
+	        Route::get('{id}/editar', [
+	        	'as' => 'sellers.d2dch.edit',
+	        	'uses' => 'SellersController@editD2DCHSellers'
+	        ]);
+
+	        Route::post('{id}/update', [
+	        	'as' => 'sellers.d2dch.update',
+	        	'uses' => 'SellersController@updateD2DCHSellers'
+	        ]);
+
+	    });
+
+	    /*VENDEDORES DE SOHO*/
+	    Route::group(['prefix' => 'soho'], function() {
+	        
+	        Route::get('/', [
+	        	'as' => 'sellers.soho',
+	        	'uses' => 'SellersController@getSohoSellers'
+	        ]);
+
+	        Route::get('crear', [
+	        	'as' => 'sellers.soho.create',
+	        	'uses' => 'SellersController@addSohoSellers'
+	        ]);
+
+	        Route::post('store', [
+	        	'as' => 'sellers.soho.store',
+	        	'uses' => 'SellersController@storeSohoSellers'
+	        ]);
+
+	        Route::get('{id}/editar', [
+	        	'as' => 'sellers.soho.edit',
+	        	'uses' => 'SellersController@editSohoSellers'
+	        ]);
+
+	        Route::post('{id}/update', [
+	        	'as' => 'sellers.soho.update',
+	        	'uses' => 'SellersController@updateSohoSellers'
+	        ]);
+
+	    });
+
+	    /*VENDEDORES DE PROMOTORES*/
+	    Route::group(['prefix' => 'promotores'], function() {
+	        
+	        Route::get('/', [
+	        	'as' => 'sellers.promoter',
+	        	'uses' => 'SellersController@getPromoterSellers'
+	        ]);
+
+	        Route::get('crear', [
+	        	'as' => 'sellers.promoter.create',
+	        	'uses' => 'SellersController@addPromoterSellers'
+	        ]);
+
+	        Route::post('store', [
+	        	'as' => 'sellers.promoter.store',
+	        	'uses' => 'SellersController@storePromoterSellers'
+	        ]);
+
+	        Route::get('{id}/editar', [
+	        	'as' => 'sellers.promoter.edit',
+	        	'uses' => 'SellersController@editPromoterSellers'
+	        ]);
+
+	        Route::post('{id}/update', [
+	        	'as' => 'sellers.promoter.update',
+	        	'uses' => 'SellersController@updatePromoterSellers'
+	        ]);
+
+	    });
+
 	});
 
 	/*ADMIN PRODUCTOS*/

@@ -1,10 +1,10 @@
 @extends('admin/layout')
 
 @section('title')
-	Dashboard
+	Portal de Ventas B2C
 @endsection
 
 @section('content')
 	
-	<p>Pantalla de bienvenida al sitio administrativo.</p>
+	<p>Bienvenido al portal de ventas.</p>
 @stop

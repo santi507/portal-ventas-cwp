@@ -23,6 +23,53 @@ $(document).on('ready', function() {
 		}
 	});
 
+	$('#call_center_sellers').DataTable({
+		"columns": [
+			{"width": "12.5%"},
+			{"width": "12.5%"},
+			{"width": "12.5%"},
+			{"width": "12.5%"},
+			{"width": "12.5%"},
+			{"width": "12.5%"},
+			{"width": "12.5%"},
+			{"width": "12.5%"},
+		],
+		"language": {
+			"emptyTable": "No vendedores registrados",
+			"info": "",
+			"infoEmpty": "",
+			"lengthMenu": "",
+			"search": "Buscar:",
+			"paginate": {
+		        "next":       "<i class='fa fa-caret-right'></i>",
+		        "previous":   "<i class='fa fa-caret-left'></i>"
+		    }
+		}
+	});
+
+	$('.sellers').DataTable({
+		"columns": [
+			{"width": "14.3%"},
+			{"width": "14.3%"},
+			{"width": "14.3%"},
+			{"width": "14.3%"},
+			{"width": "14.3%"},
+			{"width": "14.3%"},
+			{"width": "14.3%"},
+		],
+		"language": {
+			"emptyTable": "No vendedores registrados",
+			"info": "",
+			"infoEmpty": "",
+			"lengthMenu": "",
+			"search": "Buscar:",
+			"paginate": {
+		        "next":       "<i class='fa fa-caret-right'></i>",
+		        "previous":   "<i class='fa fa-caret-left'></i>"
+		    }
+		}
+	});
+
 	$('#products').DataTable({
 		"pageLength": 8,
 		"language": {

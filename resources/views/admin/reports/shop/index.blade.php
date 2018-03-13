@@ -6,6 +6,8 @@
 
 @section('content')
 	{{--*/ $nt = 'CRR80436' /*--}}
+	{{--*/ $cwp = 'CRR80436' /*--}}
+
 	<div class="row">
 		<div class="col-md-4">
 			<a href="{{ route('admin.reports.shop.fixed.seller',['nt' => $nt]) }}" 
